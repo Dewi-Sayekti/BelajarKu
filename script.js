@@ -1,13 +1,16 @@
-// escape HTML utility (dipertahankan untuk keamanan, meskipun tidak digunakan oleh bintang)
+// --- 1. UTILITIES ---
+
+// escape HTML utility (dipertahankan untuk keamanan)
 function escapeHtml(s) {
     return (s + '').replace(/[&<>"']/g, function (c) {
         return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
 }
 
-// initial loader: Sembunyikan loader setelah beberapa waktu
+// --- 2. INITIALIZATION (Saat Halaman Dimuat) ---
+
 window.addEventListener('load', () => {
-    // Sembunyikan loader saat halaman dimuat
+    // Sembunyikan loader setelah 800ms
     setTimeout(() => {
         const loader = document.getElementById('loader');
         if (loader) loader.style.display = 'none';
@@ -20,10 +23,11 @@ window.addEventListener('load', () => {
             alert('✨ Semoga harimu penuh keberuntungan, fans XingQiu! ⭐🍂');
         });
     }
+    // CATATAN: Fungsi ganti background dihapus dari sini.
 });
 
 
-// --- BAGIAN UTAMA: TABURAN BINTANG ---
+// --- 3. TABURAN BINTANG ---
 
 const starsEl = document.getElementById('stars');
 
@@ -45,4 +49,3 @@ if (starsEl) {
         starsEl.appendChild(s);
     }
 }
-// --- AKHIR BAGIAN TABURAN BINTANG ---
