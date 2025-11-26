@@ -4,51 +4,56 @@
   --accent: #7b46d6;
   --white: #e1bcbc;
 }
+
 html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: 'Poppins', system-ui, Arial;
-  background: linear-gradient(180deg, var(--purple-900), #3a0f4e);
-  background-attachment: fixed; /* <-- Tambahkan ini */
-  color: var(--purple-900);
+  /* background: linear-gradient(180deg, var(--purple-900), #3a0f4e); <-- Hapus atau komentar ini */
+  
+  /* --- Tambahkan atau modifikasi bagian ini untuk gambar background --- */
+  background-image: url('https://i.imgur.com/eQ54u5j.jpeg'); /* Ganti dengan URL gambar Anda */
+  background-size: cover; /* Memastikan gambar menutupi seluruh elemen */
+  background-position: center center; /* Memposisikan gambar di tengah */
+  background-repeat: no-repeat; /* Mencegah gambar berulang */
+  background-attachment: fixed; /* Memastikan gambar background tetap saat di-scroll */
+  /* --- Akhir bagian background gambar --- */
+
+  color: var(--white); /* Ubah warna teks agar kontras dengan background gelap */
   min-height: 100vh;
 }
+
 header.navbar {
   background: transparent;
 }
 .brand {
   font-weight: 700;
   letter-spacing: 0.6px;
-  color: #8b3193;
+  color: #8b3193; /* Mungkin perlu disesuaikan agar terlihat di atas background baru */
   text-shadow: 0 1px 0 rgba(245, 241, 241, 0.03);
 }
 .container-main {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 1rem;
+  /* Tambahkan background semi-transparan agar konten utama terbaca */
+  background-color: rgba(0, 0, 0, 0.4); 
+  border-radius: 8px;
 }
 .card {
   background: rgba(255, 255, 255, 0.04);
   border: none;
 }
 
-.bio-text {
-    color: var(--purple-pink); /* Mengubah warna teks menjadi purple pink */
-}
-
-/* Pastikan warna teks status juga sesuai (jika diinginkan) */
-.bio-status {
-    color: var(--purple-pink); 
-}
-
-/* star background */
+/* Pastikan elemen bintang berada di atas gambar background */
 .stars {
   position: fixed;
   inset: 0;
-  z-index: -25;
+  z-index: 0; /* Pastikan ini lebih tinggi dari background default, tapi di bawah konten */
   pointer-events: none;
   overflow: hidden;
 }
@@ -73,10 +78,10 @@ header.navbar {
   }
 }
 
-/* falling leaves */
+/* Falling leaves - jika Anda tetap ingin mempertahankan ini (meskipun JS-nya sudah dihapus) */
 .leaf {
   position: fixed;
-  z-index: -2;
+  z-index: 0; /* Pastikan z-index sama atau dekat dengan stars */
   pointer-events: none;
   width: 18px;
   height: 18px;
@@ -91,6 +96,7 @@ header.navbar {
   }
 }
 
+
 /* floating golden button */
 .float-btn {
   position: fixed;
@@ -101,7 +107,7 @@ header.navbar {
   border-radius: 999px;
   padding: 12px 16px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
-  z-index: 1050;
+  z-index: 1050; /* Pastikan ini di atas semua background dan konten */
   border: none;
 }
 
@@ -109,18 +115,8 @@ header.navbar {
 .tab-content {
   color: #fff;
 }
-/* make primary page heading darker (near-black) per request */
-.card h2 {
-  color: #8b3193;
-}
-.list-item {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 7px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-}
 .muted {
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.65); /* Disesuaikan agar terbaca di atas background gelap */
 }
 
 /* loading overlay */
@@ -131,7 +127,7 @@ header.navbar {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 2000;
+  z-index: 2000; /* Pastikan ini di atas semua */
 }
 .loader-stars {
   display: flex;
