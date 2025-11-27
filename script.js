@@ -1,14 +1,14 @@
-:root {
-  --purple-900: #2b0a3a;
-  --purple-700: #5b2a7a;
-  --accent: #7b46d6;
-  --white: #e1bcbc;
-}
+/:root {
+ // --purple-900: #2b0a3a;
+  //--purple-700: #5b2a7a;
+//  --accent: #7b46d6;
+//  --white: #e1bcbc;
+//}
 
 /* --- BASE STYLES --- */
 
-html,
-body {
+//html,
+//body {
   height: 100%;
 }
 
@@ -19,7 +19,7 @@ body {
   color: var(--white); 
 
   /* --- BACKGROUND GAMBAR STATIS (SATU FOTO) --- */
-  background-image: url('nama_satu_fotomu.jpg'); /* Ganti dengan NAMA FILE FOTO LOKAL Anda */
+ // background-image: url('nama_satu_fotomu.jpg'); /* Ganti dengan NAMA FILE FOTO LOKAL Anda */
   background-size: cover;          
   background-position: center center; 
   background-repeat: no-repeat;    
@@ -28,13 +28,13 @@ body {
 
 /* --- HEADER & NAVIGATION --- */
 
-header.navbar {
+//header.navbar {
   background: transparent;
   position: relative; 
   z-index: 10; /* Lebih tinggi dari background dan efek */
 }
 
-.brand {
+//.brand {
   font-weight: 700;
   letter-spacing: 0.6px;
   color: var(--accent); 
@@ -43,7 +43,7 @@ header.navbar {
 
 /* --- MAIN CONTENT LAYOUT --- */
 
-.container-main {
+//.container-main {
   max-width: 1000px;
   margin: 2rem auto;
   padding: 1rem;
@@ -55,7 +55,7 @@ header.navbar {
   border: 1px solid rgba(255, 255, 255, 0.08); 
 }
 
-.card {
+//.card {
   background: rgba(255, 255, 255, 0.04);
   border: none;
 }
@@ -66,7 +66,7 @@ header.navbar {
 
 /* --- BINTANG (STAR BACKGROUND) --- */
 
-.stars {
+//.stars {
   position: fixed;
   inset: 0;
   z-index: 0; /* Di atas gambar body, di bawah konten utama dan daun */
@@ -74,7 +74,7 @@ header.navbar {
   overflow: hidden;
 }
 
-.star-twinkle {
+//.star-twinkle {
   position: absolute;
   width: 4px;
   height: 4px;
@@ -84,7 +84,7 @@ header.navbar {
   animation: twinkle 3s infinite ease-in-out;
 }
 
-@keyframes twinkle {
+//@keyframes twinkle {
   0%,
   100% {
     opacity: 0.2;
@@ -98,7 +98,7 @@ header.navbar {
 
 /* --- DAUN BERGUJURAN (FALLING LEAVES) --- */
 
-.leaf {
+//.leaf {
   position: fixed;
   z-index: 1; /* Di atas bintang, di bawah konten utama */
   pointer-events: none;
@@ -125,7 +125,7 @@ header.navbar {
   position: fixed;
   right: 18px;
   bottom: 18px;
-  background: linear-gradient(45deg, #ffd54f, #ffb300);
+ // background: linear-gradient(45deg, #ffd54f, #ffb300);
   color: #853222;
   border-radius: 999px;
   padding: 12px 16px;
@@ -137,7 +137,7 @@ header.navbar {
 
 /* --- LOADING OVERLAY --- */
 
-.loader-overlay {
+//.loader-overlay {
   position: fixed;
   inset: 0;
   background: linear-gradient(180deg, rgba(20, 6, 30, 0.95), rgba(30, 10, 45, 0.9));
@@ -147,12 +147,12 @@ header.navbar {
   z-index: 2000; 
 }
 
-.loader-stars {
+//.loader-stars {
   display: flex;
   gap: 8px;
 }
 
-.loader-stars .dot {
+//.loader-stars .dot {
   width: 10px;
   height: 10px;
   background: var(--accent);
@@ -161,15 +161,15 @@ header.navbar {
   animation: pop 1s infinite;
 }
 
-.loader-stars .dot:nth-child(2) {
+//.loader-stars .dot:nth-child(2) {
   animation-delay: 0.5s;
 }
 
-.loader-stars .dot:nth-child(3) {
+//.loader-stars .dot:nth-child(3) {
   animation-delay: 0.3s;
 }
 
-@keyframes pop {
+//@keyframes pop {
   0% {
     transform: scale(1);
     opacity: 0.6;
@@ -186,7 +186,7 @@ header.navbar {
 
 /* --- RESPONSIVE TWEAKS --- */
 
-@media (max-width: 575px) {
+//@media (max-width: 575px) {
   .container-main {
     margin: 1rem;
     padding: 0.5rem;
