@@ -57,25 +57,92 @@
           padding: 1rem;
           position: relative;
           z-index: 2;
-          flex-grow: 1; /* Memungkinkan main mengambil ruang sisa */
           display: flex; /* Untuk memposisikan gambar di tengah main */
-          align-items: center; /* Vertikal tengah */
-          justify-content: center; /* Horizontal tengah */
         }
 
-        /* --- GAMBAR TRANSPARAN BARU --- */
-        .transparent-image-container {
-            position: relative; /* Agar z-index bekerja relatif terhadap main */
-            z-index: 5; /* Di atas bintang dan daun, di bawah header */
-            text-align: center; /* Untuk menengahkan gambar jika gambar lebih kecil dari containernya */
+       .main-content-wrapper {
+            /* Ini adalah container untuk semua konten utama */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Menengahkan elemen di dalam wrapper */
+            width: 100%;
+            flex-grow: 1;
         }
-
         .transparent-image-container img {
             max-width: 80%; /* Batasi ukuran agar tidak terlalu besar */
             height: auto;
             opacity: 0.7; /* Sedikit transparan agar background tetap terlihat */
             filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); /* Efek bayangan halus */
         }
+
+            /* --- 1 & 3. GAMBAR PENUH LEBAR (Top & Bottom) --- */
+
+.full-width-image-top,
+.full-width-image-bottom {
+    width: 100vw; /* Penuh lebar viewport */
+    position: relative;
+    /* Trik menengahkan untuk mengatasi margin default */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 2rem; /* Jarak antar bagian */
+    margin-bottom: 2rem;
+    z-index: 5;
+}
+
+.full-width-image-top img,
+.full-width-image-bottom img {
+    width: 100%;
+    display: block;
+    height: auto;
+    object-fit: cover;
+    opacity: 0.9; /* Tambahkan sedikit transparansi jika diinginkan */
+    filter: drop-shadow(0 0 15px rgba(0,0,0,0.6));
+}
+
+/* --- 2. DUA GAMBAR BERDAMPINGAN --- */
+
+.container-double-image {
+    display: flex; /* Mengaktifkan Flexbox untuk berdampingan */
+    justify-content: center; /* Menengahkan kedua gambar secara horizontal */
+    gap: 1.5rem; /* Memberi jarak di antara kedua gambar */
+    max-width: 900px; /* Batasi lebar container agar gambar tidak terlalu besar */
+    width: 95%;
+    margin: 2rem auto;
+    z-index: 5;
+}
+
+.side-image-item {
+    flex: 1 1 48%; /* Setiap item mengambil sekitar 48% lebar dan fleksibel */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.side-image-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Pastikan gambar mengisi area tanpa terdistorsi */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efek hover (opsional) */
+.side-image-item img:hover {
+    transform: scale(1.03);
+}
+
+/* Responsive: Untuk layar kecil, tumpuk gambarnya */
+@media (max-width: 768px) {
+    .container-double-image {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .side-image-item {
+        flex: 1 1 100%;
+    }
+}
 
 
         /* --- BINTANG (STAR BACKGROUND) --- */
@@ -201,11 +268,24 @@
         </div>
     </header>
 
-    <main class="container container-main">
-        <div class="transparent-image-container">
-            <img src="starcup.jpg" />
+<main class="main-content-wrapper">
+    <div class="full-width-image-top">
+        <img src="starcup.jpg" alt="Starcup Image" />
+    </div>
+
+    <div class="container-double-image">
+        <div class="side-image-item">
+            <img src="xingqiu_demo.jpg" alt="Xingqiu Demo" />
         </div>
-    </main>
+        <div class="side-image-item">
+            <img src="g.jpg" alt="G Image" />
+        </div>
+    </div>
+
+    <div class="full-width-image-bottom">
+        <img src="xingqiu.jpg" alt="Xingqiu Full Image" />
+    </div>
+</main>
     
     <button class="float-btn" id="golden">⭐ Surprise</button>
 
