@@ -1,4 +1,4 @@
-:root {
+//:root {
   --purple-900: #2b0a3a;
   --purple-700: #5b2a7a;
   --accent: #7b46d6;
@@ -7,13 +7,13 @@
 
 /* --- BASE STYLES --- */
 
-html,
+//html,
 body {
   height: 100%;
 }
 
 body {
-  margin: 0;
+ // margin: 0;
   font-family: 'Poppins', system-ui, Arial;
   min-height: 100vh;
   color: var(--white); /* Warna teks default diubah agar kontras dengan background gelap */
@@ -170,7 +170,7 @@ header.navbar {
   animation-delay: 0.3s;
 }
 
-@keyframes pop {
+//@keyframes pop {
   0% {
     transform: scale(1);
     opacity: 0.6;
@@ -187,7 +187,7 @@ header.navbar {
 
 /* --- RESPONSIVE TWEAKS --- */
 
-@media (max-width: 575px) {
+//@media (max-width: 575px) {
   .container-main {
     margin: 1rem;
     padding: 0.5rem;
