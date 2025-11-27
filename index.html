@@ -52,12 +52,13 @@
         /* --- MAIN CONTENT LAYOUT --- */
 
         .container-main {
-          max-width: 1000px;
+          max-width: 100px;
           margin: 2rem auto;
           padding: 1rem;
           position: relative;
           z-index: 2;
           display: flex; /* Untuk memposisikan gambar di tengah main */
+          justify-content: space-around;
         }
 
        .main-content-wrapper {
@@ -69,9 +70,9 @@
             flex-grow: 1;
         }
         .transparent-image-container img {
-            max-width: 80%; /* Batasi ukuran agar tidak terlalu besar */
+            max-width: 70%; /* Batasi ukuran agar tidak terlalu besar */
             height: auto;
-            opacity: 0.7; /* Sedikit transparan agar background tetap terlihat */
+            opacity: 0.6; /* Sedikit transparan agar background tetap terlihat */
             filter: drop-shadow(0 0 10px rgba(0,0,0,0.5)); /* Efek bayangan halus */
         }
 
